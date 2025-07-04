@@ -1,0 +1,1447 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap");
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1200;
+}
+.burger span {
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin: 4px 0;
+  background: #333;
+  border-radius: 2px;
+  transition: 0.3s;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.site-header {
+  width: 1156px;
+  height: 76px;
+  background: #fff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  margin: 0 auto;
+  width: 100vw;
+  backdrop-filter: blur(12px);
+  padding: auto auto;
+  z-index: 2000;
+}
+
+.site-header.sticky {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  margin: 0 auto;
+  width: 100vw;
+  background: rgba(255, 255, 255, 0.281);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.07);
+  padding: auto auto;
+}
+
+.city-label {
+  width: 58px;
+  height: 17px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgb(125, 125, 125);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+}
+.nav-menu .logo-block {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 254px;
+  max-height: 56px;
+}
+.nav-menu .logo-block .logo-text {
+  font-size: 41px;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 700;
+  line-height: 100%;
+  letter-spacing: 0;
+  color: rgb(40, 40, 40);
+  margin-right: 13px;
+  cursor: pointer;
+}
+.nav-menu .logo-block .slogon {
+  font-size: 12.73px;
+  color: rgb(150, 150, 150);
+  font-family: "Montserrat", Arial, sans-serif;
+  white-space: nowrap;
+  align-self: flex-end;
+}
+.nav-menu .navigation {
+  display: flex;
+  gap: 30px;
+  margin-left: 73px;
+}
+.nav-menu .navigation .nav-link {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(40, 40, 40);
+  text-decoration: none;
+  font-weight: 400;
+  transition: color 0.2s, border-bottom 0.2s;
+  border-bottom: 2px solid transparent;
+}
+.nav-menu .navigation .nav-link:hover {
+  color: rgb(245, 128, 19);
+  border-bottom: 2px solid rgb(245, 128, 19);
+}
+.nav-menu .navigation .nav-link.active {
+  color: rgb(245, 128, 19);
+  border-bottom: 2px solid rgb(245, 128, 19);
+}
+.nav-menu .numbers-profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+  margin-left: 73px;
+  max-width: 236px;
+  max-height: 49px;
+}
+.nav-menu .numbers-profile .profile {
+  display: flex;
+  align-items: center;
+}
+.nav-menu .numbers-profile .profile .profile-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.nav-menu .numbers-profile .phone-number {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  gap: 5px;
+}
+
+.slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 85px 30px 30px 30px;
+  max-width: 1860px;
+  height: 563px;
+  border-radius: 25px;
+  background-color: rgb(0, 0, 0);
+}
+.slider .slider-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+.slider .slider-images .slider-image {
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider .slider-images .slider-image img {
+  border-radius: 25px;
+  z-index: 1;
+  object-fit: cover;
+  z-index: 1;
+  background-color: rgba(1, 1, 1, 0.49);
+}
+.slider .slider-images .slider-image .slider-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.49);
+  border-radius: 25px;
+  z-index: 2;
+  pointer-events: none;
+}
+.slider .slider-images .slider-image .slider-caption {
+  position: absolute;
+  z-index: 2;
+  color: rgb(255, 255, 255);
+  font-size: 60px;
+  font-weight: 600;
+  font-family: "Manrope", Arial, sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
+}
+.slider .slider-images .slider-image .slider-caption .slider-more-btn {
+  font-size: 18px;
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  color: rgb(40, 40, 40);
+  background: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 171px;
+  height: 58px;
+}
+.slider .slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  font-size: 32px;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider .slider-arrow--left {
+  left: 46px;
+}
+.slider .slider-arrow--right {
+  right: 46px;
+}
+.slider .slider-arrow svg {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+.slider .slider-arrow svg path {
+  stroke: rgb(255, 255, 255);
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 60px auto 0 auto;
+  justify-content: center;
+  position: relative;
+  max-width: 1168px;
+  width: 100%;
+}
+.search .search-input-wrapper {
+  position: relative;
+}
+.search .search-input {
+  width: 1168px;
+  height: 70px;
+  padding-left: 20px;
+  font-size: 16px;
+  font-family: "Montserrat", Arial, sans-serif;
+  border: 1px solid rgb(193, 193, 193);
+  border-radius: 5px;
+  outline: none;
+  font-size: 20PX;
+  color: rgb(0, 0, 0);
+  font-family: "Manrope", Arials, sans-serif;
+}
+.search .search-input::placeholder {
+  color: rgb(150, 150, 150);
+  font-family: "Manrope", Arial, sans-serif;
+  margin: 20px auto;
+}
+.search .search-icon {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ready-solutions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1170px;
+  height: 589px;
+  margin: auto 331.5px;
+  margin-top: 80px;
+}
+.ready-solutions h2 {
+  font-size: 45px;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  color: rgb(40, 40, 40);
+  text-align: left;
+  width: 100%;
+}
+.ready-solutions .products {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+.ready-solutions .products .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  gap: 21px;
+  border: solid 1px transparent;
+  transition: 0.2s border-color;
+}
+.ready-solutions .products .product-card:hover {
+  border-color: rgb(230, 230, 230);
+}
+.ready-solutions .products .product-card img {
+  width: 270px;
+  height: 270px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.ready-solutions .products .product-card .product-name {
+  font-size: 22px;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin-left: 15px;
+}
+.ready-solutions .products .product-card .product-price {
+  font-size: 16px;
+  font-family: "Montserrat", Arial, sans-serif;
+  margin-left: 15px;
+  font-weight: 400;
+}
+.ready-solutions .products .product-card .product-btn {
+  width: 160px;
+  height: 50px;
+  border-radius: 5px;
+  color: rgb(255, 255, 255);
+  background-color: rgb(40, 40, 40);
+  margin-left: 15px;
+  border: none;
+  transition: 0.2s background-color;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+.ready-solutions .products .product-card .product-btn:hover {
+  background-color: rgb(255, 153, 0);
+}
+
+.about-company {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  max-width: 1833px;
+  height: 597px;
+  border-radius: 25px;
+  background-color: rgb(249, 249, 249);
+  margin: auto 43.5px;
+  margin-top: 80px;
+}
+.about-company .about-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 140px;
+  margin: 90px 331px;
+  text-align: left;
+}
+.about-company .about-card .about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 0;
+}
+.about-company .about-card .about-text .about-title {
+  font-weight: 200;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: 45px;
+  color: rgb(40, 40, 40);
+  margin-top: 0;
+  margin-bottom: 38px;
+}
+.about-company .about-card .about-text .about-description {
+  font-weight: 400;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-size: 16px;
+  color: rgb(40, 40, 40);
+  margin-bottom: 10px;
+}
+.about-company .about-card img {
+  width: 568px;
+  height: 417px;
+  border-radius: 30px;
+}
+
+.job-application {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1180px;
+  height: 495px;
+  margin: auto 326.5px;
+  margin-top: 80px;
+  background-color: rgb(40, 40, 40);
+  border-radius: 20px;
+}
+.job-application .application-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  margin: 75px 90px;
+  width: 988px;
+  height: 345px;
+}
+.job-application .application-card h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 32px;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 14px;
+}
+.job-application .application-card p {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 28px;
+}
+.job-application .application-card .contacts {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin-top: 0;
+  margin-bottom: 17px;
+}
+.job-application .application-card .contacts .contact-input {
+  height: 54px;
+}
+.job-application .application-card .contacts .contact-input::placeholder {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.job-application .application-card .contacts .contact-name {
+  width: 264px;
+}
+.job-application .application-card .contacts .contact-email {
+  width: 420px;
+}
+.job-application .application-card .contacts .contact-tel {
+  width: 264px;
+}
+.job-application .application-card .contact-input {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 6px;
+  padding-left: 20px;
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  text-decoration: none;
+}
+.job-application .application-card .contact-input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.job-application .application-card .contact-input:focus {
+  border: none;
+  outline: none;
+}
+.job-application .application-card .message .contact-message {
+  width: 988px;
+  height: 58px;
+  margin-bottom: 17px;
+}
+.job-application .application-card .checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 22px;
+}
+.job-application .application-card .checkbox-wrapper .contact-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: solid 1px rgb(255, 255, 255);
+  border-radius: 5px;
+  position: relative;
+  cursor: pointer;
+}
+.job-application .application-card .checkbox-wrapper .contact-checkbox::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 7px;
+  height: 12px;
+  border: solid #fff;
+  border-width: 0 2.5px 2.5px 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: absolute;
+  opacity: 0;
+  transform: rotate(45deg);
+  transition: opacity 0.2s;
+}
+.job-application .application-card .checkbox-wrapper .contact-checkbox:checked::after {
+  opacity: 1;
+}
+.job-application .application-card .checkbox-wrapper label {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(255, 255, 255);
+  margin-left: 10px;
+}
+.job-application .application-card .send-job-application-btn {
+  background-color: rgb(40, 40, 40);
+  color: rgb(255, 255, 255);
+  border-radius: 6px;
+  border: solid 2px rgb(255, 255, 255);
+  width: 183px;
+  height: 48px;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+.job-application .application-card .send-job-application-btn p {
+  margin: 13px 50px;
+}
+
+.news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 331.5px;
+  max-width: 1170px;
+  height: 532px;
+}
+.news .news-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 45px;
+  width: 100%;
+}
+.news .news-titles h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  color: rgb(40, 40, 40);
+}
+.news .news-titles p {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1.1%;
+  color: rgb(104, 104, 104);
+}
+.news .news-cards {
+  display: flex;
+  flex-direction: row;
+  max-width: 1170px;
+  height: 419px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+}
+.news .news-cards img {
+  width: 270px;
+  height: 236px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.news .news-cards .news-date {
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: left;
+  gap: 20px;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: rgb(166, 166, 166);
+  font-size: 16px;
+  font-weight: 400;
+}
+.news .news-cards .news-date h2,
+.news .news-cards .news-date p {
+  margin: 0;
+}
+.news .news-cards .news-title {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  width: 268px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  display: block;
+}
+.news .news-cards .news-title:hover {
+  color: rgb(245, 128, 19);
+}
+.news .news-cards .news-description {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(17, 17, 17);
+}
+
+.footer {
+  background-color: rgb(40, 40, 40);
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+  height: 318px;
+  gap: 16.3px;
+}
+.footer .cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 37px 372px;
+}
+.footer .cards .logo {
+  display: flex;
+  flex-direction: column;
+}
+.footer .cards .logo .title {
+  margin-bottom: 58px;
+}
+.footer .cards .logo .title h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 41px;
+  color: rgb(255, 255, 255);
+  margin-bottom: 0;
+  margin-top: 3px;
+}
+.footer .cards .logo .title p {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(164, 164, 164);
+  width: 182px;
+}
+.footer .cards .logo .prava {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+.footer .cards .logo .prava p {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgb(164, 164, 164);
+  margin: 0;
+}
+.footer .cards .logo .prava .ww-studio {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 13.22px;
+}
+.footer .cards .logo .prava .ww-studio img {
+  width: 47px;
+  height: 26px;
+}
+.footer .cards .logo .prava .ww-studio h2 {
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: -1.1%;
+  color: rgb(255, 255, 255);
+  width: 129px;
+}
+.footer .cards .catalog {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  font-family: "Manrope", Arial, sans-serif;
+  width: 252px;
+  margin-left: 108px;
+}
+.footer .cards .catalog h2 {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -1.1%;
+  color: rgb(255, 255, 255);
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+.footer .cards .catalog p {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(249, 249, 249);
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: 252px;
+}
+.footer .cards .about {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  font-family: "Manrope", Arial, sans-serif;
+  margin-left: 148px;
+}
+.footer .cards .about h2 {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: -1.1%;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.footer .cards .about p {
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(249, 249, 249);
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: 89px;
+}
+.footer .cards .address {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: right;
+  text-align: right;
+  font-family: "Manrope", Arial, sans-serif;
+  margin-left: 140px;
+}
+.footer .cards .address h2 {
+  font-weight: 500;
+  font-size: 17px;
+  color: rgb(255, 255, 255);
+  margin-top: 17px;
+  margin-bottom: 10px;
+  width: 225px;
+}
+.footer .cards .address .numbers {
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 4%;
+  color: rgb(255, 255, 255);
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.footer .cards .address .svaz {
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(164, 164, 164);
+  width: 160px;
+  text-align: right;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.footer .cards .address .social {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+.modal .modal-profile {
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 522px;
+  min-height: 522px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal-profile .modal-content {
+  margin: 50px 50px;
+}
+.modal .modal-profile .modal-content .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  height: 68px;
+}
+.modal .modal-profile .modal-content .title > :last-child {
+  align-self: flex-start;
+}
+.modal .modal-profile .modal-content .title h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  letter-spacing: -1.1%;
+  margin-top: 0;
+}
+.modal .modal-profile .modal-content .title #modal-close {
+  cursor: pointer;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  align-self: flex-start;
+  margin-top: 0;
+}
+.modal .modal-profile .modal-content .login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.modal .modal-profile .modal-content .login input {
+  border-radius: 6px;
+  width: 422px;
+  height: 54px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  background-color: rgb(249, 249, 249);
+  padding-left: 20px;
+  border: none;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.modal .modal-profile .modal-content .login input::placeholder {
+  color: rgb(150, 150, 150);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.modal .modal-profile .modal-content .login button {
+  width: 133px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(125, 125, 125);
+  color: rgb(255, 255, 255);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 67px;
+}
+.modal .modal-profile .modal-content .register-modal-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+.modal .modal-profile .modal-content .register-modal-page .register-slog {
+  color: rgb(150, 150, 150);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.modal .modal-profile .modal-content .register-modal-page .register-page {
+  color: rgb(27, 47, 51);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+.modal .modal-profile .modal-content .register-modal-page p {
+  margin: 0;
+}
+
+.modal-register {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+.modal-register .modal-profile-register {
+  background-color: #fff;
+  border-radius: 5px;
+  min-width: 522px;
+  min-height: 522px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-register .modal-profile-register .modal-content {
+  margin: 50px 50px;
+}
+.modal-register .modal-profile-register .modal-content .title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  height: 68px;
+}
+.modal-register .modal-profile-register .modal-content .title > :last-child {
+  align-self: flex-start;
+}
+.modal-register .modal-profile-register .modal-content .title h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  letter-spacing: -1.1%;
+  margin-top: 0;
+}
+.modal-register .modal-profile-register .modal-content .title #modal-close {
+  cursor: pointer;
+  font-size: 40px;
+  color: rgb(0, 0, 0);
+  align-self: flex-start;
+  margin-top: 0;
+}
+.modal-register .modal-profile-register .modal-content .register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.modal-register .modal-profile-register .modal-content .register input {
+  border-radius: 6px;
+  width: 422px;
+  height: 54px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  background-color: rgb(249, 249, 249);
+  padding-left: 20px;
+  border: none;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.modal-register .modal-profile-register .modal-content .register input::placeholder {
+  color: rgb(150, 150, 150);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+.modal-register .modal-profile-register .modal-content .register input.error {
+  background-image: url("../img/warring.png");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 34px 34px;
+  background-color: rgba(202, 13, 13, 0.13);
+  border-color: rgba(202, 13, 13, 0.21);
+}
+.modal-register .modal-profile-register .modal-content .register input.error::placeholder {
+  color: rgb(202, 13, 13);
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper input {
+  appearance: none;
+  border: solid 1px rgb(125, 125, 125);
+  border-radius: 7px;
+  width: 22px;
+  height: 22px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+  margin: 0;
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper input:checked {
+  background-color: rgb(40, 40, 40);
+  border-color: rgb(40, 40, 40);
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper input:checked::after {
+  content: "";
+  position: absolute;
+  left: 5px;
+  width: 7px;
+  height: 12px;
+  border: solid rgb(255, 255, 255);
+  border-width: 0 2.5px 2.5px 0;
+  transform: rotate(45deg);
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper input.error {
+  border-color: rgba(202, 13, 13, 0.21);
+  background-color: rgba(202, 13, 13, 0.13);
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper label {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(125, 125, 125);
+  height: 38px;
+  width: 247px;
+  margin-left: 10px;
+}
+.modal-register .modal-profile-register .modal-content .register .checkbox-wrapper label.error {
+  color: rgb(202, 13, 13);
+}
+.modal-register .modal-profile-register .modal-content .register button {
+  width: 245px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(125, 125, 125);
+  color: rgb(255, 255, 255);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-bottom: 30px;
+}
+.modal-register .modal-profile-register .modal-content .register button.active {
+  background-color: rgb(245, 128, 19);
+  cursor: pointer;
+}
+.modal-register .modal-profile-register .modal-content .register-modal-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+}
+.modal-register .modal-profile-register .modal-content .register-modal-page .register-slog {
+  color: rgb(150, 150, 150);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.modal-register .modal-profile-register .modal-content .register-modal-page .login-page {
+  color: rgb(27, 47, 51);
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  cursor: pointer;
+}
+.modal-register .modal-profile-register .modal-content .register-modal-page p {
+  margin: 0;
+}
+
+.modal-success-reg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+.modal-success-reg .modal-profile-success-reg {
+  background-color: #fff;
+  border-radius: 20px;
+  min-width: 439px;
+  min-height: 290px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-success-reg .modal-profile-success-reg .modal-close-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 38px;
+}
+.modal-success-reg .modal-profile-success-reg .modal-close-wrapper .modal-close {
+  justify-self: flex-end;
+  cursor: pointer;
+  font-size: 40px;
+  color: rgba(104, 104, 104, 0.4);
+  align-self: flex-end;
+  margin-top: 0 38px 0 0;
+}
+.modal-success-reg .modal-profile-success-reg .modal-close-wrapper h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: -1.1%;
+  color: rgb(40, 40, 40);
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+.modal-success-reg .modal-profile-success-reg .modal-close-wrapper p {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -1.1%;
+  color: rgb(40, 40, 40);
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+.modal-success-reg .modal-profile-success-reg .modal-close-wrapper button {
+  width: 96px;
+  height: 61px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(245, 128, 19);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+.main-news-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 117px 375px 0 375px;
+}
+.main-news-content .news-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1170px;
+}
+.main-news-content .news-card .breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  justify-content: flex-start;
+  width: 537px;
+  margin-left: 10px;
+  margin-bottom: 37px;
+}
+.main-news-content .news-card .breadcrumbs .breadcrumbs-blog {
+  font-family: "Montserrat", Arial, sans-serif;
+  display: block;
+  text-decoration: underline solid rgb(125, 125, 125);
+  color: rgb(125, 125, 125);
+  font-weight: 400;
+  font-size: 14px;
+  margin-right: 15px;
+}
+.main-news-content .news-card .breadcrumbs p {
+  margin: 0;
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(125, 125, 125);
+}
+.main-news-content .news-card .breadcrumbs span {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(40, 40, 40);
+  margin-left: 15px;
+}
+.main-news-content .news-card img {
+  width: 1170px;
+  height: 470px;
+  box-shadow: 0 4px 11px 0 rgba(240, 240, 240, 0.25);
+}
+.main-news-content .news-card .news-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  margin-top: 30px;
+  width: 872px;
+}
+.main-news-content .news-card .news-wrapper .news-date {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  margin-bottom: 16px;
+}
+.main-news-content .news-card .news-wrapper .news-date img {
+  width: 24px;
+  height: 24px;
+  margin-left: 30px;
+}
+.main-news-content .news-card .news-wrapper .news-date p {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: rgb(150, 150, 150);
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: center;
+  justify-self: center;
+}
+.main-news-content .news-card .news-wrapper .news-date p:last-child {
+  margin-left: 5px;
+}
+.main-news-content .news-card .news-wrapper .news-title {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  color: rgb(40, 40, 40);
+  margin-bottom: 45px;
+  width: 836px;
+}
+.main-news-content .news-card .news-wrapper .news-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
+}
+.main-news-content .news-card .news-wrapper .news-content p {
+  width: 871px;
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(40, 40, 40);
+  line-height: 150%;
+}
+.main-news-content .news {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 80px 331.5px;
+  max-width: 1170px;
+  height: 532px;
+}
+.main-news-content .news .news-titles {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 45px;
+  width: 100%;
+}
+.main-news-content .news .news-titles h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  color: rgb(40, 40, 40);
+}
+.main-news-content .news .news-titles p {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  letter-spacing: -1.1%;
+  color: rgb(104, 104, 104);
+}
+.main-news-content .news .news-cards {
+  display: flex;
+  flex-direction: row;
+  max-width: 1170px;
+  height: 419px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+}
+.main-news-content .news .news-cards img {
+  width: 270px;
+  height: 236px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.main-news-content .news .news-cards .news-date {
+  margin-top: 0;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: left;
+  gap: 20px;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: rgb(166, 166, 166);
+  font-size: 16px;
+  font-weight: 400;
+}
+.main-news-content .news .news-cards .news-date h2,
+.main-news-content .news .news-cards .news-date p {
+  margin: 0;
+}
+.main-news-content .news .news-cards .news-title {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 10px;
+  width: 268px;
+  cursor: pointer;
+  text-decoration: none;
+  color: rgb(40, 40, 40);
+  display: block;
+}
+.main-news-content .news .news-cards .news-title:hover {
+  color: rgb(245, 128, 19);
+}
+.main-news-content .news .news-cards .news-description {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: rgb(17, 17, 17);
+}
+
+.about-page-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 76px 62px 0 62px;
+}
+.about-page-wrapper h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 150%;
+  letter-spacing: -1.1%;
+  color: rgb(40, 40, 40);
+  align-self: flex-start;
+  margin: 43px auto 0 auto;
+  width: 1175px;
+}
+.about-page-wrapper .why-us {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin: 43px auto 0 auto;
+  width: 1175px;
+}
+.about-page-wrapper .why-us div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-start;
+  width: 391px;
+}
+.about-page-wrapper .why-us div img {
+  align-self: flex-start;
+  margin-bottom: 19px;
+}
+.about-page-wrapper .why-us div h2 {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 150%;
+  color: rgb(40, 40, 40);
+  width: 272px;
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin: 0;
+}
+.about-page-wrapper .why-us div p {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgb(40, 40, 40);
+  align-self: flex-start;
+  width: 372PX;
+}
+.about-page-wrapper .production-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 92px 100px 92px;
+}
+.about-page-wrapper .production-wrapper .production {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 1833px;
+  border-radius: 25px;
+  background-color: rgb(249, 249, 249);
+  margin: auto 43.5px;
+  margin-top: 80px;
+  padding-bottom: 50px;
+}
+.about-page-wrapper .production-wrapper .production h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 45px;
+  line-height: 50px;
+  color: rgb(17, 17, 17);
+  margin: 76px 345px 30px 345px;
+}
+.about-page-wrapper .production-wrapper .production p {
+  font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgb(17, 17, 17);
+  margin: 0 345px 30px 345px;
+}
+.about-page-wrapper .production-wrapper .production p:last-child {
+  margin-bottom: 76px;
+}
+.about-page-wrapper .production-wrapper .production img {
+  margin: 0 345px 30px 345px;
+  width: 1140px;
+}
+
+/*# sourceMappingURL=main_mob.css.map */
