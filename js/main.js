@@ -1,11 +1,11 @@
 // --- Авторизация ---
-const loginBtn = document.querySelector('.login button[type="submit"]');
+const loginBtn = document.querySelector('#modal .login button[type="submit"]');
 const loginModal = document.getElementById('modal');
-const loginInput = document.querySelector('.login input.name');
-const passInput = document.querySelector('.login input.password');
-const modalSuccessLog = document.querySelector('.modal-success-log');
+const loginInput = document.querySelector('#modal .login input.name');
+const passInput = document.querySelector('#modal .login input.password');
+const modalSuccessAuth = document.querySelector('.modal-success-auth');
 
-if (loginBtn && loginInput && passInput && loginModal && modalSuccessLog) {
+if (loginBtn && loginInput && passInput && loginModal) {
     loginBtn.addEventListener('click', function (e) {
         e.preventDefault();
         const login = loginInput.value.trim();
@@ -15,8 +15,8 @@ if (loginBtn && loginInput && passInput && loginModal && modalSuccessLog) {
             passInput.classList.toggle('error', !password);
             return;
         }
-        // Пример запроса на сервер (заменить на реальный обработчик)
-        fetch('../db/login.php', {
+
+        fetch('/db/login.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ login, password })
@@ -25,7 +25,6 @@ if (loginBtn && loginInput && passInput && loginModal && modalSuccessLog) {
             .then(data => {
                 if (data.success) {
                     loginModal.style.display = 'none';
-                    modalSuccessLog.style.display = 'flex';
                     loginInput.value = '';
                     passInput.value = '';
                 } else {
@@ -37,15 +36,31 @@ if (loginBtn && loginInput && passInput && loginModal && modalSuccessLog) {
             });
     });
     // Кнопка "Ок" и крестик закрывают модалку успеха
-    modalSuccessLog.querySelector('.success-reg').addEventListener('click', function () {
-        modalSuccessLog.style.display = 'none';
-    });
-    modalSuccessLog.querySelector('.modal-close').addEventListener('click', function () {
-        modalSuccessLog.style.display = 'none';
-    });
-    // Клик вне окна
-    modalSuccessLog.addEventListener('click', function (e) {
-        if (e.target === this) this.style.display = 'none';
+
+}
+modalSuccessAuth.querySelector('.success-reg').addEventListener('click', function () {
+    modalSuccessAuth.style.display = 'none';
+});
+modalSuccessAuth.querySelector('.modal-close').addEventListener('click', function () {
+    modalSuccessAuth.style.display = 'none';
+});
+// Клик вне окна
+modalSuccessAuth.addEventListener('click', function (e) {
+    if (e.target === this) this.style.display = 'none';
+});
+const logoutBtn = document.querySelector('.modal-success-auth .logout');
+if (logoutBtn && modalSuccessAuth) {
+    logoutBtn.addEventListener('click', function () {
+        fetch('/db/logout.php', {
+            method: 'POST'
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    modalSuccessAuth.style.display = 'none';
+                    window.location.reload(); // обновить страницу, чтобы меню и профиль сменились на "Войти"
+                }
+            });
     });
 }
 
@@ -53,11 +68,13 @@ if (loginBtn && loginInput && passInput && loginModal && modalSuccessLog) {
 // Новый бургер-меню
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Открытие модального окна авторизации из мобильного меню
+    // Открытие модального окна авторизации или профиля из мобильного меню
     const mobileMenuEl = document.getElementById('mobile-menu');
     const mobileLoginLink = mobileMenuEl ? mobileMenuEl.querySelector('.nav-link') : null;
     const modal = document.getElementById('modal');
-    if (mobileLoginLink && modal && mobileMenuEl) {
+    const modalSuccessAuth = document.getElementById('modal-success-auth');
+
+    if (mobileLoginLink && modal && mobileMenuEl && modalSuccessAuth) {
         mobileLoginLink.addEventListener('click', function (e) {
             e.preventDefault();
             mobileMenuEl.classList.remove('open');
@@ -69,7 +86,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 burger.setAttribute('aria-expanded', 'false');
                 burger.style.display = 'flex';
             }
-            modal.style.display = 'flex';
+            // Проверяем авторизацию
+            if (window.isAuth) {
+                modalSuccessAuth.style.display = 'flex';
+                modal.style.display = 'none';
+            } else {
+                modal.style.display = 'flex';
+                modalSuccessAuth.style.display = 'none';
+            }
         });
     }
     // --- Активация кнопки Войти ---
@@ -165,8 +189,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.querySelector('.profile').addEventListener('click', function () {
         document.getElementById('modal-success-reg').style.display = 'none';
-        document.getElementById('modal').style.display = 'flex';
+        document.getElementById('modal').style.display = 'none';
         document.getElementById('modal-register').style.display = 'none';
+        document.getElementById('modal-success-auth').style.display = 'none';
+
+        // Проверяем авторизацию (например, через window.isAuth, выставляемую в PHP)
+        if (window.isAuth) {
+            document.getElementById('modal-success-auth').style.display = 'flex';
+        } else {
+            document.getElementById('modal').style.display = 'flex';
+        }
 
 
     });
@@ -254,10 +286,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.querySelector('.register-btn').addEventListener('click', function (e) {
         e.preventDefault();
+        const buttonreg = document.querySelector('.register-btn');
+        const nameInput = document.querySelector('.register input.name');
+        const surnameInput = document.querySelector('.register input.surname');
+        const phoneInput = document.querySelector('.register input.contact-tel');
+        const checkboxreg = document.getElementById('register-agree');
 
-        const name = document.querySelector('.register input.name').value.trim();
-        const surname = document.querySelector('.register input.surname').value.trim();
-        const phone = document.querySelector('.register input.contact-tel').value.trim();
+        const name = nameInput.value.trim();
+        const surname = surnameInput.value.trim();
+        const phone = phoneInput.value.trim();
 
         if (!name || !surname || !phone || !checkboxreg.checked) {
             console.log('Заполните все поля');
@@ -273,11 +310,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 .then(res => res.json())
                 .then(data => {
                     if (data.success) {
-                        // Показываем модалку успеха регистрации
+
                         modalreg.style.display = 'none';
                         modalSuccessReg.style.display = 'flex';
-                        // Можно вывести логин/пароль через alert, если нужно
-                        // alert('Данные отправлены! ' + data.login + ', Пароль: ' + data.password);
+                        buttonreg.classList.remove('active');
+
+                        nameInput.value = '';
+                        surnameInput.value = '';
+                        phoneInput.value = '';
+                        checkboxreg.checked = false;
                     } else {
                         alert('Ошибка регистрации: ' + data.error);
                     }

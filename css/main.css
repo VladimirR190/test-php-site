@@ -1245,6 +1245,79 @@ body {
   margin: 0;
 }
 
+.modal-success-auth {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+}
+.modal-success-auth .modal-profile-success-reg {
+  background-color: #fff;
+  border-radius: 20px;
+  min-width: 439px;
+  min-height: 290px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.modal-success-auth .modal-profile-success-reg .modal-close-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto 38px;
+}
+.modal-success-auth .modal-profile-success-reg .modal-close-wrapper .modal-close {
+  justify-self: flex-end;
+  cursor: pointer;
+  font-size: 40px;
+  color: rgba(104, 104, 104, 0.4);
+  align-self: flex-end;
+  margin-top: 0 38px 0 0;
+}
+.modal-success-auth .modal-profile-success-reg .modal-close-wrapper h2 {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  letter-spacing: -1.1%;
+  color: rgb(40, 40, 40);
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+.modal-success-auth .modal-profile-success-reg .modal-close-wrapper p {
+  font-family: "Manrope", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: -1.1%;
+  color: rgb(40, 40, 40);
+  margin-top: 0;
+  margin-bottom: 26px;
+}
+.modal-success-auth .modal-profile-success-reg .modal-close-wrapper button {
+  width: 96px;
+  height: 61px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgb(245, 128, 19);
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  font-family: "Inter", Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
 .main-news-content {
   display: flex;
   flex-direction: column;
