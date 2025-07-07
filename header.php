@@ -99,7 +99,7 @@ if (isset($_SERVER['REQUEST_URI']) && preg_match('#/about.php#', $_SERVER['REQUE
                 <a href="#" class="nav-link">Контакты</a>
             </nav>
         </div>
-       
+
     </header>
     <div class="modal" id="modal">
         <div class="modal-profile" id="modal-profile">
@@ -152,6 +152,7 @@ if (isset($_SERVER['REQUEST_URI']) && preg_match('#/about.php#', $_SERVER['REQUE
                 <span class="modal-close" id="modal-close">&times;</span>
                 <h2>Спасибо!</h2>
                 <p>Заявка успешно отправлена</p>
+                <div class="reg-info"></div>
                 <button class="success-reg">Ок</button>
             </div>
 

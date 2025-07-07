@@ -27,6 +27,7 @@ if (loginBtn && loginInput && passInput && loginModal) {
                     loginModal.style.display = 'none';
                     loginInput.value = '';
                     passInput.value = '';
+                    window.location.reload();
                 } else {
                     alert('Ошибка авторизации: ' + (data.error || 'Неверный логин или пароль'));
                 }
@@ -319,6 +320,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         surnameInput.value = '';
                         phoneInput.value = '';
                         checkboxreg.checked = false;
+                        const regInfo = document.querySelector('.modal-success-reg .reg-info');
+                        if (regInfo) {
+                            regInfo.innerHTML = `
+                    <p>Ваш логин: <b>${data.login}</b></p>
+                    <p>Ваш пароль: <b>${data.password}</b></p>
+                `;
+                        }
                     } else {
                         alert('Ошибка регистрации: ' + data.error);
                     }
